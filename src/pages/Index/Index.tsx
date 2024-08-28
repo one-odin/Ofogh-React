@@ -48,7 +48,7 @@ const Index: React.FC = () => {
         <div className="text-center">
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 justify-items-stretch p-16">
             {showItemsPagination?.map((item) => (
-              <div className="w-full p-10 text-center bg-white dark:bg-slate-700 border border-gray-200 dark:border-gray-500 rounded-3xl mx-auto">
+              <div key={item.id} className="w-full p-10 text-center bg-white dark:bg-slate-700 border border-gray-200 dark:border-gray-500 rounded-3xl mx-auto">
                 <Link to={`/ad-detail/${item.id}`}>
                   <h5 className="mb-8 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-300">{item.title}</h5>
                 </Link>
@@ -63,7 +63,7 @@ const Index: React.FC = () => {
             ))}
           </div>
         </div>
-        {allAds && <Pagination AllItems={allAds} setShowItemsPagination={setShowItemsPagination} itemPerPage={8}/>}
+        {allAds && <Pagination AllItems={allAds} setShowItemsPagination={setShowItemsPagination} itemPerPage={8} />}
       </div>
       <Footer />
     </>

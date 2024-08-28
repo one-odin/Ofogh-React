@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from "@headlessui/react";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { showToastError, showToastSuccess } from "../../utils/ShowToast";
@@ -7,8 +7,8 @@ import GlobalContext from "../../context/globalContext";
 import { ToastContainer } from "react-toastify";
 
 type AdDeleteProps = {
-  adID: string | undefined
-}
+  adID: string | undefined;
+};
 
 const AdDelete: React.FC<AdDeleteProps> = ({ adID }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -16,32 +16,29 @@ const AdDelete: React.FC<AdDeleteProps> = ({ adID }) => {
 
   const globalContext = useContext(GlobalContext);
 
-  useEffect(() => {
+  const deletePostHandler = () => {
     if (!globalContext.isLoggedIn) {
       navigate("/login");
+    } else {
+      fetch(`http://localhost:3000/ads/${adID}`, {
+        method: "DELETE",
+      }).then((res) => {
+        if (!res.ok) {
+          showToastError("عملیات انجام نشد، بعدا تلاش نمایید");
+        }
+        showToastSuccess("آگهی مورد نظر با موفقيت حذف گرديد");
+        setShowModal(false);
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
+      });
     }
-  }, []);
-  
-  const deletePostHandler = () => {
-    fetch(`http://localhost:3000/ads/${adID}`, {
-      method: "DELETE"
-    }).then(res => {
-      if (!res.ok) {
-        showToastError("عملیات انجام نشد، بعدا تلاش نمایید");
-      }
-      showToastSuccess("آگهی مورد نظر با موفقيت حذف گرديد");
-      setShowModal(false)
-      setTimeout(() => {
-        navigate("/");
-      }, 3000);
-    });
-    
   };
 
   return (
     <>
       <TrashIcon type="button" onClick={() => setShowModal(true)} className="text-red-700 w-6 cursor-pointer" />
-      <ToastContainer/>
+      <ToastContainer />
       <Dialog open={showModal} onClose={setShowModal} className="relative" style={{ zIndex: "1000" }}>
         <DialogBackdrop
           transition

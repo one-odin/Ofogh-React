@@ -22,6 +22,7 @@ const AdDetail: React.FC = () => {
         setAdDetail(data);
         setLat(data.lat);
         setLng(data.lng);
+        console.log(data);
       });
   }, []);
 
