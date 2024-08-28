@@ -4,7 +4,7 @@ import { GlobalContextTypes } from "../types/globalContextTypes";
 const defaultContextValue: GlobalContextTypes = {
   isLoggedIn: false,
   token: null,
-  userInfo: {},
+  userInfo: null,
   login: () => {},
   logout: () => {},
   changeTheme: () => {},
