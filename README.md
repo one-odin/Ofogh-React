@@ -1,9 +1,10 @@
-# This is a advertisement project with CRUD operations built with React + TypeScript
+# This is a advertisement project built with React + TypeScript + Json Server Auth
 
 This is a [React.js](https://react.dev/) project bootstrapped with [Vite](https://vitejs.dev/).
 
 ## Dependencies
 
+- Vite
 - JSON Server
 - JSON Server Auth
 - Leaflet
