@@ -1,4 +1,4 @@
-# This is a advertisement projectbuilt with React + TypeScript + Json Server Auth
+# This is a advertisement project built with React + TypeScript + Json Server Auth
 
 This is a [React.js](https://react.dev/) project bootstrapped with [Vite](https://vitejs.dev/).
 
