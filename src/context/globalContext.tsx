@@ -11,6 +11,7 @@ const defaultContextValue: GlobalContextTypes = {
   dark: true,
 };
 
+
 const GlobalContext: Context<GlobalContextTypes> = createContext(defaultContextValue);
 
 export default GlobalContext;
