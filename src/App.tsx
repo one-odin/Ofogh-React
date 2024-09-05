@@ -5,7 +5,7 @@ import { useRoutes, useNavigate } from "react-router-dom";
 import "./App.css";
 
 import GlobalContext from "./context/globalContext";
-import { GlobalContextTypes, userInfoType } from "./types/globalContextTypes";
+import { GlobalContextTypes, userInfoType } from "./types/GlobalContext.types";
 
 const App: React.FC = () => {
   const router = useRoutes(routes);

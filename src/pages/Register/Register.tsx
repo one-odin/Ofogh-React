@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { showToastError, showToastSuccess } from "../../utils/ShowToast";
 import { Link, useNavigate } from "react-router-dom";
 import { registerValidationSchema } from "../../utils/validationSchema";
-import { registerType } from "../../types/authTypes";
+import { registerType } from "../../types/Auth.types";
 import GlobalContext from "../../context/globalContext";
 
 const Register: React.FC = () => {

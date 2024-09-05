@@ -1,7 +1,7 @@
 "use client";
 import React, {useState, useEffect} from "react";
 import ReactPaginate from "react-paginate";
-import { adPropsTypes } from "../../types/adTypes";
+import { adPropsTypes } from "../../types/Ad.types";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 type paginationPropsTypes = {

@@ -1,5 +1,5 @@
 import { createContext, Context } from "react";
-import { GlobalContextTypes } from "../types/globalContextTypes";
+import { GlobalContextTypes } from "../types/GlobalContext.types";
 
 const defaultContextValue: GlobalContextTypes = {
   isLoggedIn: false,

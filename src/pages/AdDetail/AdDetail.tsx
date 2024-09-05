@@ -4,7 +4,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import MapComponent from "../../components/MapComponent/MapComponent";
 
-import { adPropsTypes } from "../../types/adTypes";
+import { adPropsTypes } from "../../types/Ad.types";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 import AdDeleteModal from "../../components/AdDeleteModal/AdDeleteModal";
 

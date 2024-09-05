@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 import { showToastError, showToastSuccess } from "../../utils/ShowToast";
 import { useNavigate, useParams } from "react-router-dom";
 import { adValidationSchema } from "../../utils/validationSchema";
-import { adPropsTypes, adTypes } from "../../types/adTypes";
+import { adPropsTypes, adTypes } from "../../types/Ad.types";
 import SelectMapModalEdit from "../../components/SelectMapModalEdit/SelectMapModalEdit";
 
 const AdEdit: React.FC = () => {

@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { showToastError, showToastSuccess } from "../../utils/ShowToast";
 import { Link, useNavigate } from "react-router-dom";
 import { loginValidationSchema } from "../../utils/validationSchema";
-import { loginType } from "../../types/authTypes";
+import { loginType } from "../../types/Auth.types";
 import GlobalContext from "../../context/globalContext";
 
 const Login: React.FC = () => {
