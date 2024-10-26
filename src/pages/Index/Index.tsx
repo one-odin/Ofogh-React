@@ -26,9 +26,9 @@ const Index: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Header />
-      <div className="mx-auto px-3 ">
+      <div className="flex-1 mx-auto px-3">
         {/* header */}
         <h1 className="mb-4 mt-20 text-center text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-4xl">
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-pink-500 from-sky-400">آگهی ها</span>
@@ -49,11 +49,11 @@ const Index: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 justify-items-stretch p-16">
             {showItemsPagination?.map((item) => (
               <div key={item.id} className="w-full p-10 text-center bg-white dark:bg-slate-700 border border-gray-200 dark:border-gray-500 rounded-3xl mx-auto">
-                <Link to={`/ad-detail/${item.id}`}>
+                <Link to={`/ads/ad-detail/${item.id}`}>
                   <h5 className="mb-8 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-300">{item.title}</h5>
                 </Link>
                 <p className="mb-5 font-normal text-gray-500 dark:text-gray-400 break-words">{item.address}</p>
-                <Link to={`/ad-detail/${item.id}`} className="inline-flex font-medium items-center group text-pink-500 hover:underline">
+                <Link to={`/ads/ad-detail/${item.id}`} className="inline-flex font-medium items-center group text-pink-500 hover:underline">
                   ادامه
                   <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2 group-hover:transform group-hover:-translate-x-2 transition duration-300" aria-hidden="true" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -66,7 +66,7 @@ const Index: React.FC = () => {
         {allAds && <Pagination AllItems={allAds} setShowItemsPagination={setShowItemsPagination} itemPerPage={8} />}
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

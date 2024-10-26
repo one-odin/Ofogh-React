@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           <Link to="/" className="text-sm leading-6 text-gray-900 dark:text-gray-50">
             صفحه اصلی
           </Link>
-          <Link to="/ad-new" className="text-sm leading-6 text-gray-900 dark:text-gray-50">
+          <Link to="/ads/ad-new" className="text-sm leading-6 text-gray-900 dark:text-gray-50">
             افزودن آگهی
           </Link>
           <Popover className="relative">
@@ -159,7 +159,7 @@ const Header: React.FC = () => {
                 <Link to="/" className="-mx-3 block rounded-lg px-3 py-2 leading-7 text-gray-900 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700">
                   صفحه اصلی
                 </Link>
-                <Link to="/ad-new" className="-mx-3 block rounded-lg px-3 py-2 leading-7 text-gray-900 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700">
+                <Link to="/ads/ad-new" className="-mx-3 block rounded-lg px-3 py-2 leading-7 text-gray-900 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700">
                   ثبت آگهی
                 </Link>
                 {globalContext.isLoggedIn === true ? (
@@ -168,7 +168,7 @@ const Header: React.FC = () => {
                       <button className="font-semibold text-base text-gray-900 dark:text-gray-50" onClick={globalContext.logout}>
                         خروج
                       </button>
-                        <PowerIcon className="h-5 w-5 text-gray-600 group-hover:text-pink-500" aria-hidden="true" />
+                      <PowerIcon className="h-5 w-5 text-gray-600 group-hover:text-pink-500" aria-hidden="true" />
                     </div>
                   </>
                 ) : (
