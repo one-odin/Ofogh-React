@@ -16,19 +16,23 @@ const App: React.FC = () => {
   const [userInfo, setUserInfo] = useState<userInfoType | null>(null);
 
   const [isDark, setIsDark] = useState<boolean>(() => {
-    return localStorage.getItem("theme") === "dark" ? true : false;
+    return localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
   });
 
-  if (localStorage.getItem("theme") === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    } else {
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
+    }
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  }, [isDark]);
 
   const toggleTheme = () => {
     setIsDark((prev) => !prev);
-    const theme = isDark ? "light" : "dark";
-    localStorage.setItem("theme", theme);
   };
 
   const login = (userInfo: userInfoType, token: string): void => {
@@ -45,7 +49,7 @@ const App: React.FC = () => {
     setIsLoggedIn(false);
     setUserInfo(null);
     localStorage.removeItem("user");
-    navigate("/")
+    navigate("/");
   }, []);
 
   useEffect(() => {
